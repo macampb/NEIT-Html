@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 | Loops Arrays and Objects!</title>
+</head>
+<body>
+
+    <div id="favoriteMovies"> 
+        <!-- Setting up movies -->
+        <h2>My Favorite Movies are: </h2>
+        <!-- unordered list -->
+        <ul id="listOfMovies">  </ul>
+
+        <h2> My Favorite Foods are: </h2>
+        <ol id="listOfFood"> </ol>
+
+
+    </div>
+    <script>
+
+        var numberForLoop = 0
+
+        // Using Let instead of var
+        // Let makes it a local variable
+
+        // The condition needs to e true to start and run
+        // It stops when the condition is false
+        for(let i=0; i <= 54; i += 2){
+            numberForLoop +=6
+            console.log(numberForLoop)
+        }
+
+        function pizzaSquares()
+        {
+            console.log("Pizza")
+        }
+
+        for (let i = 0; i <=72; i++){
+            pizzaSquares()
+        }
+
+        // Examples of arrays
+        var movies = [
+            "Spider-Man",
+            "Spirited Away",
+            "Avengers",
+            "Conjuring",
+            "The Minecraft Movie",
+            "Minions Movie"
+        ]
+
+        console.log(movies[4]) 
+        //The Minecraft Movie is in position 4 (starts at 0)
+        console.log(movies[2]) 
+        //Avengers
+
+        // Output all the movies
+        for (let i=0; i< movies.length; i++)
+        {
+            console.log(movies[i])
+        }
+
+        var numberArray = []
+
+        for (let i=0; i<7; i++)
+        {
+            numberArray.push(i*5432 / 93 + 23)
+        }
+
+        console.log(numberArray)
+
+        // An array can hold several different things
+        // HOWEVER YOU SHOULD NOT DO THIS.
+        // ALL VALUES SHOULD BE THE SAME DATA TYPE
+
+        // An example of a 2d array
+        var twoDArray = [
+            [0,0,0,0,0,0],
+            [1,24,57,85,1,1],
+            [23,123,6234,124,123,1],
+            [1,2,3,4,5,6],
+        ]
+
+        // Loops through each array
+        for (let x=0; x < twoDArray.length; x ++)
+        {
+            // Loops inside each array to get values, making sure we only loop trough the size of the array
+            for (let y=0; y < twoDArray[x].length; y++){
+                // Outputs the Values
+                console.log(twoDArray[x][y])
+            }
+        }
+
+        
+            // Objects
+        var person={
+            first: "Mikhala",
+            last: "Campbell" //You dont need a comma for the last value
+        }
+
+        console.log(person.first)
+        console.log(person.last)
+
+        person.first = "Gage"
+        person.last = "Carrothead?"
+
+        console.log(person.first)
+        console.log(person.last)
+
+        var car = {
+            wheels: 2000,
+            hasEngine: true,
+            oil: "synthetic",
+            windows: 1,
+            drive: function () {console.log("vroom vroom")}
+        }
+
+        // Accessing the data inside car
+        console.log("This Car has " + car.wheels + " wheels")
+        // Calling the function
+        car.drive()
+
+
+        // Examples with For Loops and objects and arrays
+         
+        var unorderedMovieList = document.querySelector("#listOfMovies")
+        
+        for (let i=0; i < movies.length; i++)
+        {
+            // Adding to the HTML with each movie
+            unorderedMovieList.innerHTML += "<li>" + movies[i] + "</li>"
+        }
+
+        // LAB
+        var food = [
+            "Chinese Food",
+            "Sushi",
+            "Jerk Chicken",
+            "Mac n Cheese",
+            "Chipotle",
+            "Columbian Food"
+        ]
+
+        var orderedFoodList = document.querySelector("#listOfFood")
+
+        for (let i=0; i < food.length; i++)
+        {
+            orderedFoodList.innerHTML += "<li>" + food[i] + "</li>"
+        }
+
+        // How to loop through all the keys in an object
+        for (let key in car){
+            console.log(car[key])
+        }
+
+    </script>
+    
+</body>
+</html>
