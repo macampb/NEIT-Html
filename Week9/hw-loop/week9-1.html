@@ -37,11 +37,11 @@
 			tempDiv.setAttribute("id", String(i)) 
 			tempDiv.setAttribute("class", "border")
 
-			for (let key in people[i])
+			for (key in people[i])
 			{
 				var pTag = document.createElement('p') //Creating Child 
 				pTag.innerHTML = people[i][key] // Adding Value to Child
-
+				
 				tempDiv.appendChild(pTag) //Appended Child to Parent 
 			}
 
