@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Week 2 Files</title>
+<title>Week 9 Files</title>
 <style type="text/css">
 	.border{border:1px solid black;}
 </style>
@@ -10,38 +10,12 @@
 
 <body>
 	
-	<div id="output">
-	
-		<div class="border" id="">
+	<script type="text/javascript">
 
-		</div>
+		// Query Selects body
+		var body = document.querySelector("body")
 
-		<div class="border" id="">
-
-		</div>
-
-		<div class="border" id="">
-
-		</div>
-
-		<div class="border" id="">
-
-		</div>
-
-		<div class="border" id="">
-
-		</div>
-
-		<div class="border" id="">
-
-		</div>
-
-	</div>	
-
-	<script type="text/javascript" >
-
-		var select = document.querySelector(body)
-
+		// Object Array
 		var people =[
 		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
 		{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
@@ -52,30 +26,31 @@
 		{first:"Marion", last:"Cobretti", credit:"Cobra" }
 	]
 
+	// Function for Loop
 	function finalOutput(){
-
-		for( let i=0; i < people.length; i++)
+		
+		for(let i=0; i < people.length; i++)
 		{
-			var tempDiv = document.createElement("tempDiv")
-			tempDiv.setAttribute("id", String(i))
+			var tempDiv = document.createElement("div") //Parent (Creating Divs for the Object Arrays)
+
+			// Giving the Div and Id and Class
+			tempDiv.setAttribute("id", String(i)) 
 			tempDiv.setAttribute("class", "border")
 
-			for (key in people[u]){
-				output += "<p>" + people[i][key] + "<br>"
+			for (let key in people[i])
+			{
+				var pTag = document.createElement('p') //Creating Child 
+				pTag.innerHTML = people[i][key] // Adding Value to Child
+
+				tempDiv.appendChild(pTag) //Appended Child to Parent 
 			}
 
-			output += "<hr>"
-
-			document.querySelector("#output").innerHTML = output
+			body.appendChild(tempDiv)
 		}
+	}	
+	
 
-		
-	}
-
-
-		
-
-
+	finalOutput()
 
 	</script>
 
